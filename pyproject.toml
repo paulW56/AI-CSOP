@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csop"
+version = "0.1.0"
+description = "Detect, classify, and track drones with a pan-tilt camera"
+requires-python = ">=3.10"
+dependencies = [
+    "ultralytics>=8.3",
+    "opencv-python>=4.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
